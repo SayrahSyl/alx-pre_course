@@ -6,7 +6,7 @@
 
 /**
  * main - this is the main function
- * 
+ *
  * Return: on SUCCESS exit
  */
 

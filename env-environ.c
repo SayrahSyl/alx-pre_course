@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "simple_shell.h"
 
 /**
  * main - main function
@@ -11,8 +12,8 @@ int main(void)
 {
 	char **env = environ;
 	{
-		while (*env != NULL);
-
+		while
+			(*env != NULL);
 		printf("%s\n", *env);
 	}
 	s++;
