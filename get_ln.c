@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include "simple_shell.h"
 
 /**
  * main - main function
@@ -13,7 +13,7 @@
 int main(void)
 {
 	char *sarah = NULL;
-	size_t bytes = 17;
+	size_t bytes = 1024;
 	ssize_t bytes_rd = 0;
 
 	sarah = malloc(sizeof(char) * bytes);
