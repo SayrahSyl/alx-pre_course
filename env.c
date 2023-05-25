@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern char **environ;
-
 /**
  * print_environment - Display the current environment variables.
  */
+
 void print_environment(void)
 {
-    char **env = environ;
+	char **env = environ;
 
-    while (*env != NULL)
-    {
-        printf("%s\n", *env);
-        env++;
-    }
+	while (*env != NULL)
+	{
+		printf("%s\n", *env);
+		env++;
+	}
 }
 
 /**
@@ -23,6 +22,6 @@ void print_environment(void)
  */
 int main(void)
 {
-    print_environment();
-    return 0;
+	print_environment();
+	return (0);
 }

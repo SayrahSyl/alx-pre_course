@@ -22,14 +22,14 @@ int main(void)
 
 	if (child_pid == 0)
 	{
-		/* Child process */
+
 		printf("Wait for me, wait for me\n");
 		sleep(3);
-		_exit(0); /* Terminate the child process */
+		_exit(0);
 	}
 	else
 	{
-		/* Parent process */
+
 		if (wait(&status) == -1)
 		{
 			perror("wait");
