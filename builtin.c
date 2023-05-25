@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "simple_shell.h"
 
 /**
  * main - main function
@@ -94,7 +93,6 @@ int main(void)
 
 /**
  * main - main function
- * @print_environment: print the current user environment
  * Return: NULL
  */
 
