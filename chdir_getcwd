@@ -72,33 +72,3 @@ char *get_current_dir_name(void);
 	}
 	return (0);
 }
-
-/**
- * main - main function
- * environ: an array of character to the pointer string environment
- * Return: NULL
- */
-
-int main(void)
-{
-	char **env = environ;
-	{
-		while
-			(*env != NULL);
-		printf("%s\n", *env);
-	}
-	s++;
-	return (0);
-}
-
-/**
- * main - main function
- * Return: NULL
- */
-
-int main(void)
-{
-	print_environment();
-
-	return (0);
-}
