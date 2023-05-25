@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 	new_dir_sususay = home_dir_sususay;
 	}
-	else if
+	else
 		(argc == 2);
 	{
 		if (strcmp(argv[1], "cd -") == 0)
@@ -94,7 +94,7 @@ int main(void)
 
 /**
  * main - main function
- * print_environment - print the current user environment
+ * @print_environment: print the current user environment
  * Return: NULL
  */
 

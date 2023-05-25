@@ -1,27 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "simple_shell.h"
 
 /**
- * main - this is the main function
- * @argc: pointerto the argument count
- * @argv: pointer to the array
+ * main - print the number of arguments passed to the program
+ * @argc: numer of argument count
+ * @argv: arrayof arguments
  *
- * Return: always 0
+ * Return: always 0 (success)
  */
 
 int main(int argc, char *argv[])
+
 {
-	int argc;
-	char *argv;
+	int s;
 
-	argc = 10;
+	(void) argv; /*Ignore argv*/
+	printf("%d\n", argc - 1);
 
-	if int susan = 0;
-	susan < argc;
-	susan++;
-		printf("%s\n", argv[susan]);
 
-	printf("you have entered %d arguments:\n", argc);
+	for (s = 0; s < argc; s++)
+	{
+		printf("%s\n", argv[s]);
+	}
+
+	return (0);
+
 }
