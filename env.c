@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+extern char **environ;
+
 /**
- * print_environment - Display the current environment variables.
+ * main - Entry point of the program
+ * environ - variable of an array strings
+ *
+ * Return: 0 on success
  */
 
-void print_environment(void)
+int main(void)
 {
 	char **env = environ;
 
@@ -14,14 +19,6 @@ void print_environment(void)
 		printf("%s\n", *env);
 		env++;
 	}
-}
 
-/**
- * main - Entry point of the program.
- * Return: 0 on success.
- */
-int main(void)
-{
-	print_environment();
 	return (0);
 }

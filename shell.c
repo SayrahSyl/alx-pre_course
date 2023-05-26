@@ -1,59 +1,62 @@
 #include <stdio.h>
-<<<<<<< HEAD
-#include <stdio.h>
-=======
 #include <stdlib.h>
 #include <ctype.h>
 #include "simple_shell.h"
->>>>>>> 54af34d366faf78dd714e5c5693f2ea1aec93497
 
 /**
- * main - print the number of arguments passed to the program
- * @argc: numer of argument count
- * @argv: arrayof arguments
+ * convert - this convert a string to an integer
+ * @arg: this is the string to convert
+ * @val: the pointer to store thr converted value
  *
- * Return: always 0 (success)
+ * Return: return 1 on success, and 0 on failure
  */
-<<<<<<< HEAD
-int main(int argc, char *argv[])
-{
-	int s;
-	(void)argc;
-
-	printf("%d\n", argc - 1);
-
-	for (s = 0; s < argc; s++)
-=======
 
 int convert(char *arg, int *val)
 {
-	int result = 1;
-	char *chk;
-	int x = strtol( arg, &chk, 10 );
-	if ( !isspace( *chk ) && *chk != 0 )
->>>>>>> 54af34d366faf78dd714e5c5693f2ea1aec93497
+	int susan = 1;
+	char *sarah;
+	int m = strtol(arg, &sarah, 10);
+
+	if (!isspace(*sarah) && *sarah != 0)
 	{
-		result = 0;
-		fprintf( stderr, "%s this is not an integer!\n", arg );
-		return 0;
+		susan = 0;
+		fprintf(stderr, "%s this is not an integer\n", arg);
+		return (0);
 	}
-<<<<<<< HEAD
-	return (0);
-=======
-	*val = x;
-	return 1;
+
+	*val = m;
+	return (1);
 }
-	if ( argc < 3 )
+
+/**
+ * main - this si the main function
+ * @argc: arguments line count
+ * @argv: argument array
+ *
+ * Return: always 0 (success)
+ */
+
+int main(int argc, char *argv[])
+{
+	int u;
+
+	printf("%d\n", argc - 1);
+
+	if (argc < 5)
 	{
-		fprintf( stderr, "USAGE: %s x y\n", argv[0] );
-		exit( 0 );
+		printf(stderr, "Sususay: %s x y\n", argv[0]);
+		exit(FAILURE_TO_EXIT);
 	}
-	
-	int x, y;
-	if ( convert( argv[1], &x) && convert( argv[2], &y ))
+
+	for (u = 1; u < argc; u++)
 	{
-		printf( "%d\n", x + y );
+		int val;
+
+		if (convert(argc[u], &val))
+		{
+			printf("%d\n", val);
+		}
 	}
-	return 0;
->>>>>>> 54af34d366faf78dd714e5c5693f2ea1aec93497
+
+	return (0);
 }

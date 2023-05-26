@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 
 /**
@@ -9,12 +10,8 @@
  */
 int _unsetenv(const char *name)
 {
-	const char *name = "susan";
+	if (name == NULL)
+		return (-1);
 
-	if (unsetenv(susan) != 0)
-	{
-		fprintf(stderr, "Failed to unset environment variable.\n");
-	return (1);
-	}
-	return (0);
+	return unsetenv(name);
 }

@@ -17,5 +17,5 @@ int execve(const char *path, char *const argv[], char *const envp[]);
 char *read_cli(void);
 int main(void);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int main(int argc, char *argv[]);
+
 #endif

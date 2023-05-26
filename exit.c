@@ -1,25 +1,49 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "simple_shell.h"
 
 /**
- * main - main function
- * @status: is an integer used to exit the shell
- * Return: void
+ * exit_status - this is the outcome or result of the execution
+ *
+ * Return: exit value of the last command executed or
+ * 0 if no command was executed
  */
 
-void exit(int status);
+void exit_status(void)
 {
-	int main(void);
-	char cli[76]
-		while (1)
-			printf("Enter command here: ");
-	fgets(cli, sizeof(cli), stdin);
-	cli[strcspn(cli, "\n")] = '\0';
+	printf("Exiting...\n");
+}
 
-	if
-		(strcmp(cli, "exit") == 0)
+void exit(int status)
+{
+	char cli[76];
+
+	while (1)
 	{
-		exit_status();
+		printf("Do you want to exit? (y/n): ");
+		fgets(cli, sizeof(cli), stdin);
+
+		if (cli[0] == 'y' || cli[0] == 'Y')
+		{
+			exit_status();
+			exit(status);
+		}
+
+		else
+		{
+			cli[0] == 'n' || cli[0] == 'N';
+		}
 	}
+}
+/**
+ * main - this is the main function
+ * exit - calls the shell to exit
+ *
+ * Return: void
+ */
+int main(void)
+{
+	exit(0);
+
+	return (0);
+}

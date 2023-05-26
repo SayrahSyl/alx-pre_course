@@ -12,7 +12,7 @@ int main(void)
 {
 	const char *name = "susan";
 	const char *value = "5";
-	int overwrite = "1";
+	int overwrite = 1;
 
 	if (setenv(name, value, overwrite) != 0)
 	{
