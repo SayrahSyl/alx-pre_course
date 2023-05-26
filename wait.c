@@ -4,11 +4,17 @@
 #include <sys/wait.h>
 
 /**
- * main - Demonstrates forking a child process and waiting for it to complete.
- *
- * Return: Always 0.
+ * fork - create a child process
+ * wait — await process completion
+ * Return: On  success,  the  PID of the child process
+ * is returned in the parent,
+ * and 0 is returned in the child.
+ * On failure, -1 is returned in the parent, no child process is created,
+ * and errno is set appropriately.
  */
-int main(void)
+
+pid_t fork(void)
+wait [pid...]
 {
 	pid_t child_pid;
 	int status;
@@ -39,4 +45,3 @@ int main(void)
 	}
 
 	return (0);
-}

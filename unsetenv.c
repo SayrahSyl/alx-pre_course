@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * _unsetenv - deletes the variable name from the environ.
@@ -10,8 +10,18 @@
  */
 int _unsetenv(const char *name)
 {
-	if (name == NULL)
-		return (-1);
+	int argc, char *argv[]
+	{
+		if (argc != 2)
+		{
+			fprintf(stderr, "Usage: %s VARIABLE\n", argv[0]);
+			return (1);
+		}
+		if (unsetenv(argv[1]) != 0)
+		{
+			fprintf(stderr, "Failed to unset environ variable: %s\n", argv[1]);
+			return (1);
+		}
 
-	return unsetenv(name);
+		return (0);
 }

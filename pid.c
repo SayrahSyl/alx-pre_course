@@ -4,12 +4,10 @@
 #include "simple_shell.h"
 
 /**
- * main - this is the function that prints the process ID
- *
- * Return: prints 0 at success
+ * getpid - returns  the process ID (PID) of the calling process.
+ * Return: 0 on success
  */
-
-int main(void)
+pid_t getpid(void)
 {
 	pid_t sususay_pid;
 

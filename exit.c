@@ -29,10 +29,8 @@ void exit(int status)
 			exit(status);
 		}
 
-		else
-		{
-			cli[0] == 'n' || cli[0] == 'N';
-		}
+	
+		
 	}
 }
 /**

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include "simple_shell.h"
@@ -10,32 +11,30 @@
  *
  * Return: return 1 on success, and 0 on failure
  */
-
-int convert(char *arg, int *val)
+int convert(const char *arg, int *val)
 {
-	int susan = 1;
-	char *sarah;
-	int m = strtol(arg, &sarah, 10);
+	char *endptr;
+	long num;
 
-	if (!isspace(*sarah) && *sarah != 0)
+	num = strtol(arg, &endptr, 10);
+	if (*endptr != '\0')
 	{
-		susan = 0;
-		fprintf(stderr, "%s this is not an integer\n", arg);
 		return (0);
 	}
-
-	*val = m;
+	if (num < INT_MIN || num > INT_MAX)
+	{
+		return (0);
+	}
+	*val = (int)num;
 	return (1);
 }
 
 /**
- * main - this si the main function
- * @argc: arguments line count
- * @argv: argument array
- *
- * Return: always 0 (success)
+ * main - program entry
+ * @argc: argument count
+ * @argv: Array of command-line argument strings.
+ * Return: 0 on success, 1 on failure.
  */
-
 int main(int argc, char *argv[])
 {
 	int u;
@@ -44,19 +43,23 @@ int main(int argc, char *argv[])
 
 	if (argc < 5)
 	{
-		printf(stderr, "Sususay: %s x y\n", argv[0]);
-		exit(FAILURE_TO_EXIT);
+		fprintf(stderr, "Sususay: %s x y\n", argv[0]);
+		return (1);
 	}
 
 	for (u = 1; u < argc; u++)
 	{
 		int val;
 
-		if (convert(argc[u], &val))
+		if (convert(argv[u], &val))
 		{
 			printf("%d\n", val);
 		}
 	}
-
-	return (0);
+		else
+		{
+			fprintf(stderr, "Failed to convert: %s\n", argv[u]);
+			return (1);
+		}
+		return (0);
 }
