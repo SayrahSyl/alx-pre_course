@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+#include "simple_shell.h"
 
 /**
  * main - main function
@@ -48,15 +45,15 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-   /**
-    *  getcwd, get_current_dir_name - get current working directory
-    *
-    * Return: on success return a pointer to a string containing
-    * the pathname of the current working directory.
-    * On failure, return NULL, and errno is set to indicate the error.
-    *
-    */
-char *get_current_dir_name(void);
+/**
+ * getcwd, get_current_dir_name - get current working directory
+ *
+ * Return: on success return a pointer to a string containing
+ * the pathname of the current working directory.
+ * On failure, return NULL, and errno is set to indicate the error.
+ */
+
+char *get_current_dir_name(void)
 {
 	char cwd[PATH_MAX];
 
@@ -68,7 +65,7 @@ char *get_current_dir_name(void);
 	if (setenv("PWD", cwd, 1) != 0)
 	{
 		perror("setenv");
-		return (1);
+		return NULL;
 	}
 	return (0);
 }

@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "simple_shell.h"
 
 extern char **environ;
 
 /**
- * main - Entry point of the program
- * environ - variable of an array strings
+ * main - this is the main function
+ * environ - array of character pointers to the environment strings
  *
  * Return: 0 on success
  */

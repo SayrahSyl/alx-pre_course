@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "simple_shell.h"
 
 /**
  * _setenv - change or add an environment variable

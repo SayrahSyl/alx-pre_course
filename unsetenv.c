@@ -1,6 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include "simple_shell.h"
 
 /**
  * _unsetenv - deletes the variable name from the environ.

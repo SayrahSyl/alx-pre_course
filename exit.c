@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "simple_shell.h"
 
 /**
@@ -14,9 +12,23 @@ void exit_status(void)
 	printf("Exiting...\n");
 }
 
+/**
+ * exit - terminates the calling process immediately
+ * @status: this is returned to the parent process as the
+ * process's exit status
+ *
+ * Return: exit value of the last command executed or
+ * 0 if no command was executed
+ */
+
 void exit(int status)
 {
 	char cli[76];
+
+	{
+		exit_status();
+		exit(status);
+	}
 
 	while (1)
 	{
@@ -25,23 +37,7 @@ void exit(int status)
 
 		if (cli[0] == 'y' || cli[0] == 'Y')
 		{
-			exit_status();
-			exit(status);
+			exit(0);
 		}
-
-	
-		
 	}
-}
-/**
- * main - this is the main function
- * exit - calls the shell to exit
- *
- * Return: void
- */
-int main(void)
-{
-	exit(0);
-
-	return (0);
 }

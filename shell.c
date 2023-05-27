@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include "simple_shell.h"
 
 /**

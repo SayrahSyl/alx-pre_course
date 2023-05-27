@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include "simple_shell.h"
 
 /**
  * fork - create a child process
@@ -13,7 +10,7 @@
  * and errno is set appropriately.
  */
 
-pid_t fork(void)
+pid_t fork(void);
 wait [pid...]
 {
 	pid_t child_pid;
@@ -45,3 +42,4 @@ wait [pid...]
 	}
 
 	return (0);
+}
